@@ -1,0 +1,3 @@
+[submodule "exercise-00"]
+	path = exercise-00
+	url = https://github.com/cake-lier/jacamo-ex-00.git
