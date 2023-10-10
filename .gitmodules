@@ -4,3 +4,6 @@
 [submodule "exercise-01"]
 	path = exercise-01
 	url = https://github.com/cake-lier/jacamo-ex-01.git
+[submodule "exercise-02"]
+	path = exercise-02
+	url = https://github.com/cake-lier/jacamo-ex-02.git
