@@ -61,7 +61,7 @@ Some notes on how the JaCaMo platform works, documenting a bit more some of what
 
 As a conclusion, the competition, another list of exercises you can do about CArtAgO if you didn't had enough of ours:
 
-* [A step by step walk in programming multi-agent environment](https://www.emse.fr/~boissier/enseignement/maop19-winter/env-step-by-step.html#_step_5_coordination_again_by_the_way_of_artifact)
+* [A step by step walk in programming multi-agent environment](https://www.emse.fr/~boissier/enseignement/maop19-winter/env-step-by-step.html)
 
 ## ⚠️⚠️⚠️ A word of advice before leaving you to the exercises ⚠️⚠️⚠️
 
