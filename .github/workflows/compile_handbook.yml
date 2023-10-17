@@ -1,0 +1,34 @@
+name: Handbook compiling
+
+on:
+  push:
+    branches:
+    - "main"
+    paths:
+    - "docs/**"
+    
+jobs:
+  compile:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: docs
+          root_file: |
+            cartago_by_examples.tex
+      - name: Upload to GitHub
+        uses: actions/upload-artifact@master
+        with:
+          name: "CArtAgO and JaCa by examples"
+          path: docs/cartago_by_examples.pdf
+      - name: Create folder for GitHub pages deployment
+        run: mkdir site && mv docs/cartago_by_examples.pdf site/
+      - name: Publish on GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
