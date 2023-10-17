@@ -44,7 +44,7 @@ Nothing else is required, all of them just work out of the box. So, enjoy playin
 
 For first, obviously the original handbook from which the exercises were taken:
 
-* [CArtAgO by examples](https://github.com/CArtAgO-lang/cartago/blob/b98b0e511a7e908a3fbaa54027e46f43f68cc406/docs/cartago_by_examples/cartago_by_examples.pdf)
+* [CArtAgO by examples](https://cake-lier.github.io/cartago-by-exercises/cartago_by_examples.pdf)
 
 The handbook explaining how does the "Jason" agent programming language works and its official documentation:
 
@@ -59,7 +59,7 @@ Some notes on how the JaCaMo platform works, documenting a bit more some of what
 
 * [Some help on the use of the JaCaMo platform](https://www.emse.fr/~boissier/enseignement/maop17-spring/doc/help.html)
 
-As a conclusion, the competition, another list of exercises you can do about CArtAgO if you didn't had enough of ours:
+As a conclusion, the competition, some other lists of exercises you can do about CArtAgO if you didn't had enough of ours:
 
 * [A step by step walk in programming multi-agent environment](https://www.emse.fr/~boissier/enseignement/maop19-winter/env-step-by-step.html)
 
