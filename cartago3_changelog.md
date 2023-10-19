@@ -27,7 +27,7 @@ if it should.
 workspace? So, does it exists a notion of "current workspace" or not? Shouldn't then artifacts searched by name between the ones
 in the current workspace, as the "non annotated" versions do? This can be seen in the [tests for the new workspace model](https://github.com/CArtAgO-lang/cartago/blob/440cd41c1810ceef6a627477c461776b3200236b/src/test/jaca/test/tester_agent_new_wsp_model.asl#L44).
 
-## The current workspace
+## Keeping the current workspace in the flow
 
 Before, there was at least one "current_wsp(WorkspaceId, WorkspaceName, NodeId)" belief into the belief base of an agent,
 containing the pieces of information about the default workspace. Being that the notion of current workspace was abolished, this
@@ -67,13 +67,28 @@ An alternative to the "linkWorkspace" primitive is the "mountWorkspace" one, whi
 while specifying the absolute path of where to mount, or link, the remote one. In a single parameter is then specified the linking
 workspace and the name of the remote one for the linked workspace.
 
-## Remote workspaces
+## The remote side of the workspaces
 
 Both the "joinWorkspace" and the "linkWorkspace" have a remote counterpart, respectively called "joinRemoteWorkspace" and
-"linkRemoteWorkspace". They are not more powerful than the first ones, they just limit themselves to work with remote workspaces,
-a thing that their "non-remote counterpart" can do all the same.
+"linkRemoteWorkspace". In CArtAgO 3.0 they are not more powerful than the first ones, they just limit themselves to work with
+remote workspaces, a thing that their "non-remote" counterparts can do all the same.
 
 ⚠️ It is a known limitation that the "joinRemoteWorkspace" is not working as in CArtAgO 2.0: specifying the name of the workspace
-to join and the address of the node on which that workspace is located, made by a host and a port, is not enough anymore. The
-"default" protocol for connection, "Java RMI", appears not to be working because superseded by a new, "web", one. This is also
-true while trying to use "joinWorkspace" in the same way. Further research is needed on this topic.
+to join and the address of the node on which that workspace is located, made by a host and a port, is not enough anymore.
+Specifying a URL after the path argument, either absolute or relative, of the workspace to join doesn't work either.
+
+❓ The existence of these "remote" primitives is up to debate: do we want to be transparent to distribution or not? Is joining a
+remote workspace just a matter of specifying a URI? And if so, what URIs can be supported? Can joining a local workspace using its
+path be assimilated to specifying only a part of a URI, where the rest of it is left implicit? Do workspaces have multiple URIs
+then?
+
+⚠️ It is a known limitation that the "default" protocol for connection, "Java RMI", appears not to be working because superseded
+by a new, "web" one based on the "HTTP" protocol.
+
+❓ This is very apt with the idea of assigning URIs to workspaces to identify and join them. But should we support other
+web-standardized protocols, such as MQTT, CoAP, Websocket, WebSub, et cetera? Shouldn't be URIs independent from the connection
+protocol we want to use, or can they serve a double purpose as in Yggdrasil?
+
+⚠️ It is a known limitation The "joinWorkspace" primitive works if used for joining a remote workspaces but suspends indefinitely
+the agent's plan. The remote node shows no problem whatsoever, while the local one waits for something to happen that never
+comes.
