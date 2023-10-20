@@ -41,3 +41,6 @@
 [submodule "exercise-10"]
 	path = exercise-10
 	url = https://github.com/cake-lier/cartago-ex-10.git
+[submodule "exercise-12"]
+	path = exercise-12
+	url = https://github.com/cake-lier/cartago-ex-12.git
